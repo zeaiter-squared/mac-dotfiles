@@ -1,0 +1,96 @@
+snippet let "JavaScript: boilerplate for variable" b
+let ${1:Let} = $2
+endsnippet
+
+snippet const "JavaScript: boilerplate for constant" b
+const ${1:Const} = $2
+endsnippet
+
+snippet function "JavaScript: boilerplate for function" b
+$1function ${2:Function}(${3:parameters}) {
+	$4
+}
+endsnippet
+
+snippet class "JavaScript: boilerplate for class" b
+$1class ${2:Class} {
+	$3
+}
+endsnippet
+
+snippet try "JavaScript: boilerplate try/catch" b
+try {
+	$1
+} catch (error) {
+	$2
+}
+endsnippet
+
+snippet switch "JavaScript: boilerplate switch" b
+switch ($1) {
+	case $2:
+		$3
+	default:
+		$4
+		break;
+}
+endsnippet
+
+snippet for "JavaScript: boilerplate for for loop" b
+for ($1) {
+	$2
+}
+endsnippet
+
+snippet if "JavaScript: boilerplate for if clause" b
+if ($1) {
+	$2
+}
+endsnippet
+
+snippet elif "JavaScript: boilerplate for else if block"
+else if ($1) {
+	$2
+}
+endsnippet
+
+snippet else "JavaScript: boilerplate for else block"
+else {
+	$1
+}
+endsnippet
+
+snippet {} "JavaScript: expand braces across multiple lines" w
+{
+	$1
+}
+endsnippet
+
+snippet () "JavaScript: expand brackets across multiple lines" w
+(
+	$1
+)
+endsnippet
+
+snippet {:} "JavaScript: expand JSX if ternary" b
+{$1 ?
+	$2
+:
+	$3
+}
+endsnippet
+
+snippet <> "JavaScript: template for JSX node"
+<${1:element}$2>
+	$3
+</$1>
+endsnippet
+
+snippet // "JavaScript: expand /* comment environment" w
+/* $1 */
+endsnippet
+
+snippet /* "JavaScript: expand /* mulit-line comment environment" b
+/** ${1:DocHeading}
+ */
+endsnippet

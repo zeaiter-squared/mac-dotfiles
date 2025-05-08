@@ -1,0 +1,56 @@
+snippet out "Java: print" b
+System.out.print($1);
+endsnippet
+
+snippet outln "Java: print with newline" b
+System.out.println($1);
+endsnippet
+
+snippet outf "Java: formatted print" b
+System.out.printf($1);
+endsnippet
+
+snippet main "Java: boilerplate for main method" b
+public static void main(String[] args) {
+	$1
+}
+endsnippet
+
+snippet class "Java: class boilerplate" b
+$1 class ${2:Class} {
+	$3
+}
+endsnippet
+
+snippet record "Java: record boilerplate" b
+$1 record ${2:Record}(${3:variables}) { }
+$4
+endsnippet
+
+snippet interface "Java: interface boilerplate" b
+$1 interface ${2:Interface} {
+	$3
+}
+endsnippet
+
+snippet enum "Java: enumeration boilerplate" b
+$1 enum ${2:Enum} {
+	$3
+}
+endsnippet
+
+snippet {} "Java: expand braces across lines for methods etc." w
+{
+	$1
+}
+endsnippet
+
+snippet // "Java: expand /* comment environment" w
+/* $1 */
+endsnippet
+
+snippet /* "Java: expand /* mulit-line comment environment" b
+/*
+ * $1
+ */
+endsnippet

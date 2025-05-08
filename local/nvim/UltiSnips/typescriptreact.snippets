@@ -1,0 +1,132 @@
+snippet let "TypeScript: boilerplate for variable" b
+let ${1:Let} = $2
+endsnippet
+
+snippet const "TypeScript: boilerplate for constant" w
+const ${1:Const} = $2
+endsnippet
+
+snippet function "TypeScript: boilerplate for function" b
+$1function ${2:Function}(${3:Parameters}): ${4:Type} {
+	$5
+}
+endsnippet
+
+snippet get "TypeScript: boilerplate for getter method" b
+get ${1:Prop}(): ${2:Type} {
+	$3
+}
+endsnippet
+
+snippet set "TypeScript: boilerplate for setter method" b
+set ${1:Prop}(${2:Parameters}) {
+	$4
+}
+endsnippet
+
+snippet model "TypeScript: boilerplate for sequelize model" b
+$1 class ${2:Class} extends Model {
+	$3
+}
+endsnippet
+
+snippet class "TypeScript: boilerplate for class" b
+$1class ${2:Class} {
+	$3
+}
+endsnippet
+
+snippet type "TypeScript: boilerplate for type" b
+$1type ${2:Type} = {
+	$3
+}
+endsnippet
+
+snippet interface "TypeScript: boilerplate for interface" b
+$1interface ${2:Interface} {
+	$3
+}
+endsnippet
+
+snippet try "TypeScript: boilerplate try/catch" b
+try {
+	$1
+} catch (error) {
+	$2
+}
+endsnippet
+
+snippet switch "TypeScript: boilerplate switch" b
+switch ($1) {
+	case $2:
+		$3
+	default:
+		$4
+		break;
+}
+endsnippet
+
+snippet for "TypeScript: boilerplate for for loop" b
+for ($1) {
+	$2
+}
+endsnippet
+
+snippet if "TypeScript: boilerplate for if clause" b
+if ($1) {
+	$2
+}
+endsnippet
+
+snippet elif "TypeScript: boilerplate for else if block"
+else if ($1) {
+	$2
+}
+endsnippet
+
+snippet else "TypeScript: boilerplate for else block"
+else {
+	$1
+}
+endsnippet
+
+snippet {} "TypeScript: expand braces across multiple lines" w
+{
+	$1
+}
+endsnippet
+
+snippet () "TypeScript: expand brackets across multiple lines" i
+(
+	$1
+)
+endsnippet
+
+snippet ({}) "TypeScript: expand braces & brackets across multiple lines" i
+({
+	$1
+})
+endsnippet
+
+snippet {:} "TypeScript: expand JSX if ternary" b
+{$1 ?
+	$2
+:
+	$3
+}
+endsnippet
+
+snippet <> "TypeScript: template for JSX node"
+<${1:element}$2>
+	$3
+</$1>
+endsnippet
+
+snippet // "TypeScript: expand /* comment environment" w
+/* $1 */
+endsnippet
+
+snippet /* "TypeScript: expand /* mulit-line comment environment" b
+/** ${1:DocHeading}
+ */
+endsnippet
