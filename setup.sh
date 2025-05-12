@@ -45,13 +45,13 @@ rm -f ${HOME}/Downloads/Docker.dmg
 echo "Successfully installed docker."
 
 echo "Installing dotfiles..."
-cp -ft ${HOME} ${DOTFILES_DIR}/.bashrc ${DOTFILES_DIR}/.gitconfig
+ln -sf ${DOTFILES_DIR}/.bashrc ${HOME}
+ln -sf ${DOTFILES_DIR}/.gitconfig ${HOME}
 source ${HOME}/.bashrc
-cp -rf ${DOTFILES_DIR}/config/* ${HOME}/.config/
-cp -rf ${DOTFILES_DIR}/local/* ${HOME}/.local/share/
-
-cp -f ${DOTFILES_DIR}/Application\ Support/lazygit/* ${HOME}/Library/Application\ Support/lazygit
-cp -f ${DOTFILES_DIR}/Application\ Support/iTerm2/Profiles.json ${HOME}/Library/Application\ Support/iTerm2/DynamicProfiles/
+ln -sf ${DOTFILES_DIR}/config/* ${HOME}/.config/
+ln -sf ${DOTFILES_DIR}/local/* ${HOME}/.local/share/
+ln -sf ${DOTFILES_DIR}/Application\ Support/lazygit ${HOME}/Library/Application\ Support/
+ln -sf ${DOTFILES_DIR}/Application\ Support/iTerm2/Profiles.json ${HOME}/Library/Application\ Support/iTerm2/DynamicProfiles/
 echo "Successfully installed dotfiles."
 
 echo "Installing fonts..."

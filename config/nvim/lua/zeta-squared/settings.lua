@@ -1,32 +1,54 @@
-vim.g.python3_host_prog = os.getenv('HOME') .. '/.local/share/nvim/nvim_venv/bin/python'
+-- Provide path for python3 provider (required for UltiSnips)
+-- vim.g.python3_host_prog = os.getenv('HOME') .. '/.local/share/nvim/nvim_venv/bin/python'
+
+-- Set <leader> to <Space>
 vim.g.mapleader = ' '
 
+-- Set to true if nerd font is installed
+vim.g.have_nerd_font = true
+
+-- Set cursor to be old block style in insert mode
 vim.opt.guicursor = ''
+
+-- Set all windows to have rounded borders
 vim.opt.winborder = 'rounded' -- all floating windows have rounded border
 
+-- Show line number of current line instead of relative line number
 vim.opt.nu = true
+
+-- Show relative numbers in the margin
 vim.opt.relativenumber = true
 
+-- Default tab behaviour and text width
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.textwidth = 110
 vim.opt.expandtab = true
 
+-- Use smart indent to indent newlines - helpful with maintaining
+-- indents from previous line
 vim.opt.smartindent = true
 
+-- Highlight search and show all highlights incrementally as typing
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
+-- Enable 24 bit colour in terminal
 vim.opt.termguicolors = true
 
-vim.opt.signcolumn = 'no'
+-- Enable sign column to show diagnostic symbols
+vim.opt.signcolumn = 'yes'
 
+-- Connect to system clipboard if available
 vim.opt.clipboard = 'unnamed'
+
+-- Enable mouse mode
 vim.opt.mouse = 'a'
+
+-- Timeout for combination keymaps, e.g. <leader>l
 vim.opt.timeoutlen = 1000
+
+-- Default direction for splitting horizontally and vertically
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
--- From V0.11 diagnostics are opt in. We opt in here.
-vim.diagnostic.config({ virtual_text = true })

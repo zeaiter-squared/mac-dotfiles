@@ -1,64 +1,38 @@
+-- Snippets
+vim.g.UltiSnipsSnippetDirectories = {os.getenv('HOME') .. '/.local/share/nvim/UltiSnips'}
+vim.g.UltiSnipsEditSplit = 'vertical'
+vim.g.UltiSnipsExpandTrigger = '<Tab>'
+vim.g.UltiSnipsJumpForwardTrigger = '<Tab>'
+vim.g.UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+
+-- Auto completion for html tags
+require('nvim-ts-autotag').setup({})
+
+-- Auto completion for brackets
+local ua = require('ultimate-autopair')
+local configs = {ua.extend_default({
+    fastwarp = {
+        rmap = '<A-a>',
+        rcmap = '<A-a>',
+    },
+    tabout = {
+        enable = true,
+        map = '<A-t>',
+        cmap = '<A-t>',
+    },
+})}
+ua.init(configs)
+
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- This should be executed before you configure any language server
-local lspconfig_defaults = require('lspconfig').util.default_config
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lspconfig_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
+-- local lspconfig_defaults = require('lspconfig').util.default_config
+-- lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+--   'force',
+--   lspconfig_defaults.capabilities,
+--   require('cmp_nvim_lsp').default_capabilities()
+-- )
 
--- This is where you enable features that only work
--- if there is a language server active in the file
-vim.api.nvim_create_autocmd('LspAttach', {
-  desc = 'LSP actions',
-  callback = function(event)
-    local opts = {buffer = event.buf}
-
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-  end,
-})
-
-
-require('mason').setup({})
-
-require('mason-tool-installer').setup({
-    ensure_installed = {
-        'basedpyright',
-        'lua-language-server',
-        'texlab',
-        'typescript-language-server',
-        'yaml-language-server',
-        'debugpy',
-        'js-debug-adapter',
-    }
-})
-
-require('mason-lspconfig').setup({
-    handlers = {
-        function(server_name)
-            require('lspconfig')[server_name].setup({})
-        end,
-        ts_ls = function()
-            require('lspconfig').ts_ls.setup({
-                init_options = {
-                    preferences = {
-                        quotePreference = 'single'
-                    }
-                }
-            })
-        end,
-    },
-})
-
+-- Auto completion engine
 local cmp = require('cmp')
 
 cmp.setup({
@@ -100,17 +74,15 @@ cmp.setup({
     },
 })
 
---tabout.setup({
---    act_as_tab = true,
---})
-
-require('nvim-ts-autotag').setup({})
-
---vim.keymap.set('i', '<Tab>', '<Plug>(Tabout)')
---vim.keymap.set('i', '<C-f>', '<Plug>(TaboutMulti)')
---vim.keymap.set('i', '<C-d>', '<Plug>(TaboutBackMulti)')
-vim.g.UltiSnipsSnippetDirectories = {os.getenv('HOME') .. '/.local/share/nvim/UltiSnips'}
-vim.g.UltiSnipsEditSplit = 'vertical'
-vim.g.UltiSnipsExpandTrigger = '<Tab>'
-vim.g.UltiSnipsJumpForwardTrigger = '<Tab>'
-vim.g.UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'cmp_docs',
+    callback = function()
+        local prev_win = vim.fn.win_getid(vim.fn.winnr('#'))
+        if prev_win ~= 0 then
+            local bufnr = vim.api.nvim_win_get_buf(prev_win)
+            local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+            return vim.treesitter.start(0, 'typescript')
+        end
+        return vim.treesitter.start(0, 'typescript')
+    end,
+})

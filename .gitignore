@@ -1,0 +1,3 @@
+local/nvim/**/*
+!local/nvim/spell/**/*
+!local/nvim/UltiSnips/**/*
