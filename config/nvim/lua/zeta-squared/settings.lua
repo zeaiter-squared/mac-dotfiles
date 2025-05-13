@@ -1,6 +1,10 @@
 -- Provide path for python3 provider (required for UltiSnips)
 -- vim.g.python3_host_prog = os.getenv('HOME') .. '/.local/share/nvim/nvim_venv/bin/python'
 
+-- Disabled netrw for nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Set <leader> to <Space>
 vim.g.mapleader = ' '
 

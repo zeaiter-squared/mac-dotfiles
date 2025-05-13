@@ -107,3 +107,63 @@ require('bufferline').setup({
         },
     }
 })
+
+-- Nvim-tree Config
+
+local api = require('nvim-tree.api')
+vim.keymap.set({'n', 'v'}, '<leader>pd', api.tree.toggle)
+
+local function on_attach(bufnr)
+    api.config.mappings.default_on_attach(bufnr)
+
+    local function opts(desc)
+        return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait =true }
+    end
+
+    vim.keymap.set("n", "/", function()
+		local fzf = require("fzf-lua")
+		fzf.fzf_exec("fd -H -t f -E '.git/'", {
+			prompt = ":",
+			fzf_opts = { ["--padding"] = "5%,5%,15%,5%" },
+			winopts = {
+				height = 0.15,
+				width = vim.fn.winwidth(0) - 2,
+				row = 1,
+				col = 1,
+				title = " search tree ",
+			},
+			actions = {
+				["default"] = {
+					fn = function(selected)
+						api.tree.find_file(selected[1])
+					end,
+					desc = "fuzzy find in tree",
+				},
+			},
+		})
+	end, opts("fuzzy find in tree"))
+end
+
+require('nvim-tree').setup({
+    actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
+    sort = {
+        sorter = "extension",
+    },
+    view = { adaptive_size = true, side = "right" },
+    update_focused_file = { enable = true },
+    on_attach = on_attach,
+
+    ---markers
+    renderer = {
+        indent_markers = { enable = true },
+        indent_width = 2,
+        special_files = {},
+    },
+    diagnostics = { enable = false },
+    git = { enable = false },
+    filters = { dotfiles = true, custom = { "^__pycache__" } },
+})

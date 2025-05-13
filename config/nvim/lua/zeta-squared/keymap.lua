@@ -1,7 +1,7 @@
 -- Keymaps to go to Explore mode as well as open new split/tab and view
 -- the current directory.
-vim.keymap.set({'n', 'v'}, '<leader>pd', vim.cmd.Ex)
-vim.keymap.set({'n', 'v'}, '<leader>pe', ':vs<CR>:Explore<CR>')
+-- vim.keymap.set({'n', 'v'}, '<leader>pd', vim.cmd.Ex)
+-- vim.keymap.set({'n', 'v'}, '<leader>pe', ':vs<CR>:Explore<CR>')
 vim.keymap.set({'n', 'v'}, '<leader>ws', ':sp<CR>')
 vim.keymap.set({'n', 'v'}, '<leader>wv', ':vs<CR>')
 vim.keymap.set({'n', 'v'}, '<leader>wt', ':$tabnew<CR>')

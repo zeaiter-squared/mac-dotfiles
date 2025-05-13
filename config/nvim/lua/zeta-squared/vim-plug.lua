@@ -33,6 +33,7 @@ Plug('lervag/vimtex')
 Plug('nvim-lualine/lualine.nvim')
 Plug('akinsho/bufferline.nvim')
 Plug('haya14busa/is.vim')
+Plug('nvim-tree/nvim-tree.lua')
 
 
 -- Debugging - debugging.lua
