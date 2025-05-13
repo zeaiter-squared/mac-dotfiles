@@ -1,3 +1,5 @@
+.DS_Store
 local/nvim/**/*
+Application\ Support/lazygit/state.yml
 !local/nvim/spell/**/*
 !local/nvim/UltiSnips/**/*

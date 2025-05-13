@@ -17,6 +17,7 @@ vim.g['prettier#autoformat_require_pragma'] = 0
 
 -- Mini Config
 local mini = require('mini.icons')
+mini.mock_nvim_web_devicons()
 
 mini.setup({
     extension = {

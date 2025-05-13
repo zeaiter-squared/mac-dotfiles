@@ -30,7 +30,8 @@ Plug('zeta-squared/sonokai')
 Plug('ibhagwan/fzf-lua', {['branch'] = 'main'})
 Plug('numToStr/FTerm.nvim')
 Plug('lervag/vimtex')
-Plug('vim-airline/vim-airline')
+Plug('nvim-lualine/lualine.nvim')
+Plug('akinsho/bufferline.nvim')
 Plug('haya14busa/is.vim')
 
 

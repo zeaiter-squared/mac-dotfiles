@@ -93,8 +93,17 @@ vim.keymap.set({'n', 't'}, '<leader>lt', function() lazyterm:toggle() end)
 -- Vimtex Config
 vim.g.vimtex_view_method = 'zathura'
 
--- Airline Config
-vim.g['airline_powerline_fonts'] = 1
-vim.g['airline_section_z'] = "%{g:airline_symbols.linenr}%l%#__restore__#%#__accent_bold#/%L %{g:airline_symbols.maxlinenr}%v %#__restore__#"
-vim.g['airline#extensions#wordcount#enabled'] = 0
-vim.g['airline#extensions#default#section_truncate_width'] = {a = 0, b = 40, c = 60, x = 100, y = 40, z = 0}
+-- Lualine Config
+require('lualine').setup({})
+
+-- Bufferline Config
+require('bufferline').setup({
+    options = {
+        mode = 'tabs',
+        numbers = 'ordinal',
+        indicator = {
+            icon = '▎', -- this should be omitted if indicator style is not 'icon'
+            style = 'icon',
+        },
+    }
+})
