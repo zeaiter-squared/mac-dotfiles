@@ -5,6 +5,7 @@ HOMEBREW_PREFIX=/opt/homebrew/
 packages=(
     neovim
     ripgrep
+    fd
     fzf
     git
     gh

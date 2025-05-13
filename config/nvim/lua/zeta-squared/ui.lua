@@ -129,7 +129,7 @@ local function on_attach(bufnr)
 				height = 0.15,
 				width = vim.fn.winwidth(0) - 2,
 				row = 1,
-				col = 1,
+				col = 0,
 				title = " search tree ",
 			},
 			actions = {
@@ -153,7 +153,7 @@ require('nvim-tree').setup({
     sort = {
         sorter = "extension",
     },
-    view = { adaptive_size = true, side = "right" },
+    view = { adaptive_size = true, side = "left" },
     update_focused_file = { enable = true },
     on_attach = on_attach,
 
