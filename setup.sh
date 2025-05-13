@@ -50,6 +50,7 @@ ln -sf ${DOTFILES_DIR}/.gitconfig ${HOME}
 source ${HOME}/.bashrc
 ln -sf ${DOTFILES_DIR}/config/* ${HOME}/.config/
 ln -sf ${DOTFILES_DIR}/local/* ${HOME}/.local/share/
+rm -rf ${HOME}/Library/Application Support/lazygit
 ln -sf ${DOTFILES_DIR}/Application\ Support/lazygit ${HOME}/Library/Application\ Support/
 ln -sf ${DOTFILES_DIR}/Application\ Support/iTerm2/Profiles.json ${HOME}/Library/Application\ Support/iTerm2/DynamicProfiles/
 echo "Successfully installed dotfiles."
