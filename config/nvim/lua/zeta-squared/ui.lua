@@ -26,6 +26,15 @@ fzflua.setup({
 	grep = {
 		rg_opts = [[-g "!.git" -g "!node_modules" -g "!venv" -g "!__pycache__" --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e]],
 	},
+    actions = {
+        files = {
+            true,
+            ['ctrl-t'] = function(...)
+                require('fzf-lua').actions.file_tabedit(...)
+                vim.cmd('$tabmove')
+            end,
+        },
+    },
 })
 
 vim.keymap.set('n', '<leader>pf', fzflua.files)
