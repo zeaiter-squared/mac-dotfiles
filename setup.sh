@@ -68,13 +68,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 echo "Successfully installed vim-plug."
 
-echo "Creating python provider for neovim..."
-python3 -m venv ${HOME}/.local/share/nvim/nvim_venv
-source ${HOME}/.local/share/nvim/nvim_venv/bin/activate
-pip install pynvim
-deactive
-echo "Python provider setup complete."
-
 echo "Running plugin installation in neovim..."
 ${HOMEBREW_PREFIX}/bin/nvim -c PlugInstall -c q -c q
 echo "Successfully installed neovim plugins."
