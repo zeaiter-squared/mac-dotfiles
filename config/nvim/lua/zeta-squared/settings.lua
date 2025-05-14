@@ -56,3 +56,9 @@ vim.opt.timeoutlen = 1000
 -- Default direction for splitting horizontally and vertically
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Autocommand to autoread a file when either changing focus or entering a buffer
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter' }, {
+    command = "if mode() != 'c' | checktime | endif",
+    pattern = '*',
+})
