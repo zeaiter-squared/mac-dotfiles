@@ -5,18 +5,13 @@ vim.call('plug#begin')
 
 -- LSP - lsp.lua
 Plug('neovim/nvim-lspconfig')
-Plug('williamboman/mason.nvim')
+Plug('mason-org/mason.nvim')
 Plug('WhoIsSethDaniel/mason-tool-installer.nvim')
-Plug('williamboman/mason-lspconfig.nvim')
 Plug('folke/lazydev.nvim', { ['for'] = 'lua' })
 
 -- Completion - blink.lua/cmp.lua
 Plug('saghen/blink.cmp', { ['tag'] = 'v1.*' })
 Plug('L3MON4D3/LuaSnip', { ['do'] = 'make install_jsregexp' })
--- Plug('hrsh7th/nvim-cmp')
--- Plug('hrsh7th/cmp-nvim-lsp')
--- Plug('quangnguyen30192/cmp-nvim-ultisnips')
--- Plug('SirVer/ultisnips')
 Plug('altermo/ultimate-autopair.nvim')
 Plug('windwp/nvim-ts-autotag')
 
