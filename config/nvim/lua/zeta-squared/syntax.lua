@@ -43,6 +43,9 @@ mini.setup({
 })
 
 -- Syntax Highlighting Config
-vim.g.sonokai_transparent_background = 1
-vim.g.sonokai_style = 'zeta-squared'
-vim.cmd.colorscheme('sonokai')
+-- vim.g.sonokai_transparent_background = 1
+-- vim.g.sonokai_style = 'zeta-squared'
+-- vim.cmd.colorscheme('sonokai')
+local cat_config = require('zeta-squared.cat_config')
+require('catppuccin').setup(cat_config)
+vim.cmd.colorscheme('catppuccin-macchiato')

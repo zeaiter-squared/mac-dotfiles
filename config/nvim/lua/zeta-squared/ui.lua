@@ -2,6 +2,7 @@
 local fzflua = require('fzf-lua')
 
 fzflua.setup({
+    fzf_colors = true,
 	fzf_opts = {
 		['--layout'] = 'default',
 	},
@@ -102,6 +103,11 @@ vim.keymap.set({'n', 't'}, '<leader>lt', function() lazyterm:toggle() end)
 -- Vimtex Config
 vim.g.vimtex_view_method = 'zathura'
 
+-- Set transparent background to false for lualine and bufferline
+local cat_config = require('zeta-squared.cat_config')
+cat_config.transparent_background = false
+require('catppuccin').setup(cat_config)
+
 -- Lualine Config
 local function my_location()
     local lines = vim.fn.line('$')
@@ -114,7 +120,7 @@ end
 require('lualine').setup({
     options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = require('lualine.themes.catppuccin'),
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {
@@ -154,6 +160,7 @@ require('lualine').setup({
 })
 
 -- Bufferline Config
+--
 require('bufferline').setup({
     options = {
         mode = 'tabs',
@@ -162,7 +169,8 @@ require('bufferline').setup({
             icon = '▎', -- this should be omitted if indicator style is not 'icon'
             style = 'icon',
         },
-    }
+    },
+    highlights = require('catppuccin.groups.integrations.bufferline').get()
 })
 
 -- Nvim-tree Config

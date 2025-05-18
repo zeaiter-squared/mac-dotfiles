@@ -20,6 +20,7 @@ Plug('nvim-treesitter/nvim-treesitter')
 Plug('prettier/vim-prettier')
 Plug('echasnovski/mini.icons')
 Plug('zeta-squared/sonokai')
+Plug('catppuccin/nvim')
 
 -- UI/UX - ui.lua
 Plug('ibhagwan/fzf-lua', {['branch'] = 'main'})

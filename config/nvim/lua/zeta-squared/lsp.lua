@@ -48,15 +48,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
--- Capabilities for nvim-cmp
--- local capabilities = require('lspconfig').util.default_config.capabilities
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-
--- Capabilities for blink.cmp
-local capabilities = require('blink.cmp').get_lsp_capabilities()
-
-
 -- Lazydev lua_ls configuration
 require('lazydev').setup({
     library = {
