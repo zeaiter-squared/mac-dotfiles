@@ -1,6 +1,10 @@
 local cat_config = {
     flavour = 'macchiato',
     transparent_background = true,
+    show_end_of_buffer = true,
+    dim_inactive = {
+        enabled = false,
+    },
     color_overrides = {
         macchiato = {
             rosewater = '#f7744f',
@@ -13,6 +17,7 @@ local cat_config = {
             yellow = '#fdb93a',
             green = '#94e93e',
             teal = '#179299',
+            teal2 = '#dfed47',
             sky = '#04a5e5',
             sapphire = '#209fb6',
             blue = '#4bcdf8',
@@ -39,7 +44,7 @@ local cat_config = {
                 Conditional = { fg = c.yellow },
                 Delimiter = { fg = c.yellow },
                 Type = { fg = c.mauve },
-                Visual = { bg = c.surface0 },
+                Visual = { bg = c.teal },
                 String = { fg = c.red },
                 Constant = { fg = c.blue },
                 Special = { fg = c.lavender },
@@ -51,6 +56,7 @@ local cat_config = {
                 Function = { fg = c.green },
                 Number = { fg = c.red },
                 LineNr = { fg = c.surface2 },
+                CursorLineNr = { fg = c.surface2 },
                 EndOfBuffer = { fg = c.surface2 },
                 NormalFloat = { fg = c.text, bg = c.surface1 },
                 FloatBorder = { fg = c.surface2, bg = c.surface1 },
@@ -68,12 +74,16 @@ local cat_config = {
                 DiagnosticSignWarn = { fg = c.yellow },
                 DiagnosticSignInfo = { fg = c.mauve },
                 DiagnosticSignHint = { fg = c.green },
+                LualineDiagnosticSignError = { fg = c.red, bg = c.surface0 },
+                LualineDiagnosticSignWarn = { fg = c.yellow, bg = c.surface0 },
+                LualineDiagnosticSignInfo = { fg = c.mauve, bg = c.surface0 },
+                LualineDiagnosticSignHint = { fg = c.green, bg = c.surface0 },
                 FzfLuaBorder = { fg = c.surface2 },
                 FzfLuaTitle = { fg = c.surface2 },
-                FzfLuaFzfMatch = { fg = c.lavender },
                 FzfLuaFzfInfo = { fg = c.surface2 },
-                FzfLuaFzfPrompt = { fg = c.lavender },
-                FzfLuaFzfQuery = { fg = c.lavender },
+                -- FzfLuaFzfMatch = { fg = c.lavender },
+                -- FzfLuaFzfPrompt = { fg = c.lavender },
+                -- FzfLuaFzfQuery = { fg = c.lavender },
                 ['@module'] = { fg = c.rosewater },
                 ['@keyword.function'] = { fg = c.yellow },
                 ['@keyword.return'] = { fg = c.yellow },
@@ -92,10 +102,17 @@ local cat_config = {
                 ['@property'] = { fg = c.peach },
                 ['@lsp.type.interface'] = { fg = c.mauve },
                 ['@tag.delimiter'] = { fg = c.blue },
+                ['@tag.jsx'] = { fg = c.peach },
                 ['@tag.tsx'] = { fg = c.peach },
+                ['@tag.builtin.jsx']  = { fg = c.mauve },
                 ['@tag.builtin.tsx']  = { fg = c.mauve },
-                ['@tag.attribute.tsx'] = { fg = c.rosewater },
+                ['@tag.attribute.jsx'] = { fg = c.teal2 },
+                ['@tag.attribute.tsx'] = { fg = c.teal2 },
                 ['@punctuation.bracket'] = { fg = c.text },
+                ['@punctuation.special.javascript'] = { fg = c.yellow },
+                ['@punctuation.special.typescript'] = { fg = c.yellow },
+                ['@punctuation.special.jsx'] = { fg = c.yellow },
+                ['@punctuation.special.tsx'] = { fg = c.yellow },
             }
         end,
     },
@@ -105,7 +122,8 @@ local cat_config = {
         mini = {
             enabled = true,
             indentscope_color = "",
-        }
+        },
+        nvimtree = true,
     }
 }
 

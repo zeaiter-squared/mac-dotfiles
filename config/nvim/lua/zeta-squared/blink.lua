@@ -90,6 +90,11 @@ require('blink.cmp').setup({
             auto_show_delay_ms = 250,
             treesitter_highlighting = true,
         },
+        accept = {
+            auto_brackets = {
+                enabled = false,
+            },
+        },
     },
     fuzzy = {
         implementation = 'rust',

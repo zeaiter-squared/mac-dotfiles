@@ -121,8 +121,10 @@ require('lualine').setup({
     options = {
         icons_enabled = true,
         theme = require('lualine.themes.catppuccin'),
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        -- component_separators = { left = '', right = ''},
+        component_separators = { left = '', right  = '' },
+        -- section_separators = { left = '', right = ''},
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -139,7 +141,19 @@ require('lualine').setup({
     },
     sections = {
         lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_b = {
+            'branch',
+            'diff',
+            {
+                'diagnostics',
+                diagnostics_color = {
+                    error = 'LualineDiagnosticSignError',
+                    warn = 'LualineDiagnosticSignWarn',
+                    info = 'LualineDiagnosticSignInfo',
+                    hint = 'LualineDiagnosticSignHint',
+                },
+            }
+        },
         lualine_c = {'filename'},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {'progress'},
@@ -147,9 +161,9 @@ require('lualine').setup({
     },
     inactive_sections = {
         lualine_a = {},
-        lualine_b = {},
+        lualine_b = {'branch', 'diff'},
         lualine_c = {'filename'},
-        lualine_x = {'location'},
+        lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {},
         lualine_z = {}
     },
@@ -174,7 +188,6 @@ require('bufferline').setup({
 })
 
 -- Nvim-tree Config
-
 local api = require('nvim-tree.api')
 vim.keymap.set({'n', 'v'}, '<leader>pd', api.tree.toggle)
 
@@ -247,8 +260,7 @@ local function on_attach(bufnr)
     vim.keymap.set("n", "L",              api.node.open.toggle_group_empty,   opts("Toggle Group Empty"))
     vim.keymap.set("n", "M",              api.tree.toggle_no_bookmark_filter, opts("Toggle Filter: No Bookmark"))
     vim.keymap.set("n", "m",              api.marks.toggle,                   opts("Toggle Bookmark"))
-    -- vim.keymap.set("n", "o",              api.node.open.edit,                 opts("Open"))
-    vim.keymap.set("n", "o",              api.node.open.no_window_picker,     opts("Open: No Window Picker"))
+    vim.keymap.set("n", "o",              api.node.open.edit,                 opts("Open"))
     vim.keymap.set("n", "O",              api.node.navigate.parent_close,     opts("close Directory"))
     -- vim.keymap.set("n", "O",              api.node.open.no_window_picker,     opts("Open: No Window Picker"))
     vim.keymap.set("n", "p",              api.fs.paste,                       opts("Paste"))
@@ -273,6 +285,9 @@ require('nvim-tree').setup({
     actions = {
         open_file = {
             quit_on_open = true,
+            window_picker = {
+                enable = false,
+            },
         },
     },
     sort = {
