@@ -57,7 +57,7 @@ local term1 = fterm:new({
         height = 0.9,
         width = 0.9,
         x = 0.5,
-        y = 0.2,
+        y = 0.3,
     },
 })
 
@@ -65,10 +65,10 @@ local term2 = fterm:new({
     cmd = 'bash',
     border = 'rounded',
     dimensions = {
-        height = 0.96,
+        height = 0.9,
         width = 0.5,
         x = 0.01,
-        y = 0.2,
+        y = 0.3,
     },
 })
 
@@ -76,10 +76,10 @@ local term3 = fterm:new({
     cmd = 'bash',
     border = 'rounded',
     dimensions = {
-        height = 0.96,
+        height = 0.9,
         width = 0.5,
         x = 1.0,
-        y = 0.2,
+        y = 0.32,
     }
 })
 
@@ -91,7 +91,7 @@ local lazyterm = fterm:new({
         height = 0.9,
         width = 0.9,
         x = 0.5,
-        y = 0.2,
+        y = 0.3,
     },
 })
 
@@ -105,6 +105,7 @@ vim.g.vimtex_view_method = 'zathura'
 
 -- Set transparent background to false for lualine and bufferline
 local cat_config = require('zeta-squared.cat_config')
+local cat_colors = cat_config.color_overrides.macchiato
 cat_config.transparent_background = false
 require('catppuccin').setup(cat_config)
 
@@ -116,6 +117,13 @@ local function my_location()
 
     return string.format('%3d/%d:%-2d', line, lines, col)
 end
+
+local theme = require('lualine.themes.catppuccin')
+theme.normal.c.bg = cat_colors.mantle
+theme.inactive.a = { fg = cat_colors.lavender, bg = cat_colors.mantle }
+theme.inactive.b = { fg = cat_colors.lavender, bg = cat_colors.mantle }
+theme.inactive.c = { fg = cat_colors.lavender, bg = cat_colors.mantle }
+theme.inactive.x = { fg = cat_colors.lavender, bg = cat_colors.mantle }
 
 require('lualine').setup({
     options = {
