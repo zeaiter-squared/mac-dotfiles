@@ -65,7 +65,7 @@ local term2 = fterm:new({
     cmd = 'bash',
     border = 'rounded',
     dimensions = {
-        height = 0.9,
+        height = 0.95,
         width = 0.5,
         x = 0.01,
         y = 0.3,
@@ -76,10 +76,10 @@ local term3 = fterm:new({
     cmd = 'bash',
     border = 'rounded',
     dimensions = {
-        height = 0.9,
+        height = 0.95,
         width = 0.5,
         x = 1.0,
-        y = 0.32,
+        y = 0.3,
     }
 })
 
