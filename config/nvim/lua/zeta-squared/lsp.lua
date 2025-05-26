@@ -93,6 +93,10 @@ local servers = {
         lsp = 'yamlls',
         config = {},
     },
+    ['gopls'] = {
+        lsp = 'gopls',
+        config = {},
+    },
 }
 
 require('mason').setup({})

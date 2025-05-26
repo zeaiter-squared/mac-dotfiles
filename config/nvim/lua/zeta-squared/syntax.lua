@@ -1,7 +1,7 @@
 -- Treesitter Config
 require('nvim-treesitter.configs').setup {
 	ensure_installed = {"c", "java", "javascript", "typescript", "tsx", "vim",
-		"python", "lua", "html", "json", "latex", "css", "yaml", "bash"},
+		"python", "lua", "html", "json", "latex", "css", "yaml", "bash", "go", "make"},
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
@@ -21,24 +21,18 @@ mini.mock_nvim_web_devicons()
 
 mini.setup({
     extension = {
-        js = {
-            glyph = '',
-        },
-        cjs = {
-            glyph = '',
-        },
-        mjs = {
-            glyph = '',
-        },
-        ts = {
-            glyph = '',
-        },
-        sass = {
-            glyph = '',
-        },
-        scss = {
-            glyph = '',
-        },
+        js = { glyph = '' },
+        cjs = { glyph = '' },
+        mjs = { glyph = '' },
+        ts = { glyph = '' },
+        sass = { glyph = '' },
+        scss = { glyph = '' },
+        go = { glyph = '' },
+        goaccess = { glyph = '' },
+        godoc = { glyph = '' },
+        gomod = { glyph = '' },
+        gosum = { glyph = '' },
+        gowork = { glyph = '' },
     }
 })
 
