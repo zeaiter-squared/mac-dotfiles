@@ -160,9 +160,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# silence iterm2 deprecation warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
-# hidutil property --set '{"CapsLockDelayOverride":0}'
+export NPM_CONFIG_STRICT_SSL=false
 
 alias zum="docker run --name zum -i -v ${HOME}/Documents/zum/.env:/app/.env:ro -p 3000:3000 -t --rm zum-dev:latest"
 alias zum-psql='docker exec -it zum-psql bash'
