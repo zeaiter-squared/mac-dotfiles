@@ -98,7 +98,7 @@ local lazyterm = fterm:new({
 vim.keymap.set({'n', 't'}, '<leader>dt', function() term1:toggle() end)
 vim.keymap.set({'n', 't'}, '<C-\\>', function() term2: toggle() end)
 vim.keymap.set({'n', 't'}, '<A-\\>', function() term3:toggle() end)
-vim.keymap.set({'n', 't'}, '<leader>lt', function() lazyterm:toggle() end)
+vim.keymap.set({'n', 't'}, '<leader>lg', function() lazyterm:toggle() end)
 
 -- Vimtex Config
 vim.g.vimtex_view_method = 'zathura'
