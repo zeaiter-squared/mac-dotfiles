@@ -1,5 +1,6 @@
 -- Fzf-lua Config
 local fzflua = require('fzf-lua')
+local actions = require('fzf-lua').actions
 
 fzflua.setup({
     fzf_colors = true,
@@ -30,8 +31,9 @@ fzflua.setup({
     actions = {
         files = {
             true,
+            ['enter'] = actions.file_edit,
             ['ctrl-t'] = function(...)
-                require('fzf-lua').actions.file_tabedit(...)
+                actions.file_tabedit(...)
                 vim.cmd('$tabmove')
             end,
         },
@@ -39,13 +41,11 @@ fzflua.setup({
 })
 
 vim.keymap.set('n', '<leader>pf', fzflua.files)
-vim.keymap.set('n', '<leader>pb', fzflua.buffers )
+vim.keymap.set('n', '<leader>pb', fzflua.buffers)
 vim.keymap.set('n', '<leader>pt', fzflua.tabs)
-vim.keymap.set('n', '<leader>pr', fzflua.grep_visual)
+vim.keymap.set('n', '<leader>pg', fzflua.live_grep)
 vim.keymap.set('n', '<leader>pq', fzflua.lines)
 vim.keymap.set('n', '<leader>pl', fzflua.blines)
-vim.keymap.set('n', '<leader>pc', fzflua.git_commits)
-vim.keymap.set('n', '<leader>pg', fzflua.git_status)
 
 -- FTerm Config
 local fterm = require('FTerm')
@@ -327,3 +327,8 @@ require('nvim-tree').setup({
     git = { enable = false },
     filters = { dotfiles = true, custom = { "^__pycache__" } },
 })
+
+require('todo-comments').setup({})
+
+local todo_fzf = require('todo-comments.fzf')
+vim.keymap.set('n', '<leader>pc', function() todo_fzf.todo({ prompt = '>' }) end)

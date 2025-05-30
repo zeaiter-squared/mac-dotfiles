@@ -30,7 +30,7 @@ Plug('nvim-lualine/lualine.nvim')
 Plug('akinsho/bufferline.nvim')
 Plug('haya14busa/is.vim')
 Plug('nvim-tree/nvim-tree.lua')
-
+Plug('folke/todo-comments.nvim')
 
 -- Debugging - debugging.lua
 Plug('mfussenegger/nvim-dap')
