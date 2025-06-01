@@ -10,11 +10,6 @@ fzflua.setup({
 	keymap = {
 		builtin = {
 			true,
-			-- ["<C-k>"] = "preview-page-up",
-			-- ["<C-j>"] = "preview-page-down",
-			-- ["<C-i>"] = "preview-up",
-			-- ["<C-u>"] = "preview-down",
-            -- ["<C-[>"] = "hide",
 			["<C-u>"] = "preview-page-up",
 			["<C-d>"] = "preview-page-down",
 			["<C-y>"] = "preview-up",
@@ -23,7 +18,7 @@ fzflua.setup({
 		},
 	},
 	files = {
-		rg_opts = [[--color=never --files --hidden --follow -g "!.git" -g "!node_modules" -g "!venv" -g "!__pycache__"]],
+        fd_opts = [[--color=never --hidden --follow --type file --type symlink --exclude ".git" --exclude "node_modules" --exclude "venv" --exclude "__pycache__"]],
 	},
 	grep = {
 		rg_opts = [[-g "!.git" -g "!node_modules" -g "!venv" -g "!__pycache__" --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e]],
@@ -31,7 +26,6 @@ fzflua.setup({
     actions = {
         files = {
             true,
-            ['enter'] = actions.file_edit,
             ['ctrl-t'] = function(...)
                 actions.file_tabedit(...)
                 vim.cmd('$tabmove')
@@ -43,7 +37,7 @@ fzflua.setup({
 vim.keymap.set('n', '<leader>pf', fzflua.files)
 vim.keymap.set('n', '<leader>pb', fzflua.buffers)
 vim.keymap.set('n', '<leader>pt', fzflua.tabs)
-vim.keymap.set('n', '<leader>pg', fzflua.live_grep)
+vim.keymap.set('n', '<leader>pg', fzflua.grep_project)
 vim.keymap.set('n', '<leader>pq', fzflua.lines)
 vim.keymap.set('n', '<leader>pl', fzflua.blines)
 
@@ -328,7 +322,25 @@ require('nvim-tree').setup({
     filters = { dotfiles = true, custom = { "^__pycache__" } },
 })
 
-require('todo-comments').setup({})
+require('todo-comments').setup({
+    search = {
+        command = 'rg',
+        args = {
+            '--color=always',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--max-columns=4096',
+            '-g "!.git"',
+            '-g "!nmode_modules"',
+            '-g "!venv"',
+            '-g "!__pycache"',
+            '-e',
+        },
+    },
+})
 
 local todo_fzf = require('todo-comments.fzf')
 vim.keymap.set('n', '<leader>pc', function() todo_fzf.todo({ prompt = '>' }) end)
