@@ -4,7 +4,7 @@
 -- vim.keymap.set({'n', 'v'}, '<leader>pe', ':vs<CR>:Explore<CR>')
 vim.keymap.set({'n', 'v'}, '<leader>ws', ':sp<CR>')
 vim.keymap.set({'n', 'v'}, '<leader>wv', ':vs<CR>')
-vim.keymap.set({'n', 'v'}, '<leader>wt', ':$tabnew<CR>')
+vim.keymap.set({'n', 'v'}, '<leader>wt', ':$tab split<CR>')
 
 -- Remap moving between lines to not ignore wrapped lines.
 -- vim.keymap.set({'n', 'v'}, 'j', 'gj')
