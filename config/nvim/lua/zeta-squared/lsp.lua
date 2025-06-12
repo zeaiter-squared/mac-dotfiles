@@ -56,8 +56,8 @@ require('lazydev').setup({
 })
 
 local servers = {
-    pyright = {
-        lsp = 'pyright',
+    ['python-lsp-server'] = {
+        lsp = 'pylsp',
         config = {},
     },
     ['lua-language-server'] = {
