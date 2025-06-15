@@ -108,3 +108,12 @@ snippet // "TypeScript: expand /* comment environment" w
 snippet /* "TypeScript: expand /* mulit-line comment environment" b
 	/** ${1:DocHeading}
 	 */
+snippet endpoint "TypeScript: boilerplate for BE endpoint" b
+    ${1:router}.${2:method}('${3:path}', (req: Request, res: Response) => {
+        $4
+    });
+
+snippet aendpoint "TypeScript: boilerplate for BE endpoint" b
+    ${1:router}.${2:method}('${3:path}', async (req: Request, res: Response) => {
+        $4
+    });

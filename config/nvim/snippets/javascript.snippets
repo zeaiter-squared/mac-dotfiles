@@ -78,3 +78,12 @@ snippet // "JavaScript: expand /* comment environment" w
 snippet /* "JavaScript: expand /* mulit-line comment environment" b
     /** ${1:DocHeading}
      */
+snippet endpoint "JavaScript: boilerplate for BE endpoint" b
+    ${1:router}.${2:method}('${3:path}', (req, res) => {
+        $4
+    });
+
+snippet aendpoint "JavaScript: boilerplate for BE endpoint" b
+    ${1:router}.${2:method}('${3:path}', async (req, res) => {
+        $4
+    });
