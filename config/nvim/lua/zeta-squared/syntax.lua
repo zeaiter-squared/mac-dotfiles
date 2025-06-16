@@ -13,8 +13,8 @@ require('nvim-treesitter.configs').setup {
 }
 
 -- Prettier Config
-vim.g['prettier#autoformat'] = 1
-vim.g['prettier#autoformat_require_pragma'] = 0
+-- vim.g['prettier#autoformat'] = 1
+-- vim.g['prettier#autoformat_require_pragma'] = 0
 
 -- Mini Config
 local mini = require('mini.icons')
