@@ -25,6 +25,10 @@ vim.keymap.set('i', '<A-b>', '<C-Left>')
 vim.keymap.set('i', '<C-a>', '<Home>')
 vim.keymap.set('i', '<C-e>', '<End>')
 
+-- Keymap to recenter after scrolling
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
 -- Keymaps for switching between splits.
 vim.keymap.set('n', '<A-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<A-l>', ':wincmd l<CR>')
