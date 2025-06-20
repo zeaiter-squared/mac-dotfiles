@@ -40,6 +40,8 @@ vim.keymap.set('n', '<leader>pt', fzflua.tabs)
 vim.keymap.set('n', '<leader>pg', fzflua.grep_project)
 vim.keymap.set('n', '<leader>pq', fzflua.lines)
 vim.keymap.set('n', '<leader>pl', fzflua.blines)
+-- Set FzfLua as the default ui select for neovim
+fzflua.register_ui_select()
 
 -- FTerm Config
 local fterm = require('FTerm')
