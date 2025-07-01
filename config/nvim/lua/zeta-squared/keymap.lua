@@ -30,10 +30,10 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Keymaps for switching between splits.
-vim.keymap.set('n', '<A-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<A-l>', ':wincmd l<CR>')
-vim.keymap.set('n', '<A-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<A-k>', ':wincmd k<CR>')
+-- vim.keymap.set('n', '<A-h>', ':wincmd h<CR>')
+-- vim.keymap.set('n', '<A-l>', ':wincmd l<CR>')
+-- vim.keymap.set('n', '<A-j>', ':wincmd j<CR>')
+-- vim.keymap.set('n', '<A-k>', ':wincmd k<CR>')
 
 -- Keymaps for adding newlines below or above current line without
 -- leaving normal mode.
