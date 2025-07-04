@@ -17,9 +17,7 @@ Plug('windwp/nvim-ts-autotag')
 
 -- Syntax, formatting, and icons - syntax.lua
 Plug('nvim-treesitter/nvim-treesitter')
-Plug('prettier/vim-prettier')
 Plug('echasnovski/mini.icons')
-Plug('zeta-squared/sonokai')
 Plug('catppuccin/nvim')
 
 -- UI/UX - ui.lua
@@ -29,7 +27,7 @@ Plug('lervag/vimtex')
 Plug('nvim-lualine/lualine.nvim')
 Plug('akinsho/bufferline.nvim')
 Plug('haya14busa/is.vim')
-Plug('nvim-tree/nvim-tree.lua')
+Plug('stevearc/oil.nvim')
 Plug('folke/todo-comments.nvim')
 
 -- Debugging - debugging.lua
