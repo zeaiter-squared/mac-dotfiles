@@ -10,12 +10,12 @@
     "Alpha Component" : 1,
     "Green Component" : 0.34901960784313724
   },
-  "Ansi 0 Color" : {
-    "Red Component" : 0.078431375324726105,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.11764705926179886,
+  "Ansi 12 Color (Light)" : {
+    "Red Component" : 0.11372549019607843,
+    "Color Space" : "P3",
+    "Blue Component" : 0.95294117647058818,
     "Alpha Component" : 1,
-    "Green Component" : 0.098039217293262454
+    "Green Component" : 0.59999999999999998
   },
   "Cursor Text Color" : {
     "Red Component" : 1,
@@ -389,7 +389,7 @@
     "Alpha Component" : 1,
     "Green Component" : 1
   },
-  "Command" : "\/bin\/bash",
+  "Command" : "\/bin\/bash -ilc \"tmux new-session -A -s dev\"",
   "Minimum Contrast (Light)" : 0,
   "Blend" : 0.5,
   "Character Encoding" : 4,
@@ -726,14 +726,14 @@
     "Alpha Component" : 1,
     "Green Component" : 0
   },
-  "Non-ASCII Anti Aliased" : true,
-  "Ansi 12 Color (Light)" : {
-    "Red Component" : 0.11372549019607843,
-    "Color Space" : "P3",
-    "Blue Component" : 0.95294117647058818,
+  "Ansi 0 Color" : {
+    "Red Component" : 0.078431375324726105,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.11764705926179886,
     "Alpha Component" : 1,
-    "Green Component" : 0.59999999999999998
+    "Green Component" : 0.098039217293262454
   },
+  "Non-ASCII Anti Aliased" : true,
   "Foreground Color (Dark)" : {
     "Red Component" : 1,
     "Color Space" : "P3",
@@ -752,7 +752,13 @@
     "Alpha Component" : 1,
     "Green Component" : 0.34901960784313724
   },
-  "Non-ASCII Anti Aliased" : true,
+  "Ansi 0 Color" : {
+    "Red Component" : 0.078431375324726105,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.11764705926179886,
+    "Alpha Component" : 1,
+    "Green Component" : 0.098039217293262454
+  },
   "Cursor Text Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -903,7 +909,7 @@
   "Vertical Spacing" : 1,
   "Use Tab Color (Light)" : false,
   "Cursor Type" : 2,
-  "Columns" : 230,
+  "Columns" : 250,
   "Ansi 2 Color (Light)" : {
     "Red Component" : 1,
     "Color Space" : "P3",
@@ -1122,7 +1128,7 @@
     "Alpha Component" : 1,
     "Green Component" : 1
   },
-  "Command" : "\/bin\/bash",
+  "Command" : "\/bin\/bash -ilc \"tmux new-session -A -s dev\"",
   "Minimum Contrast (Light)" : 0,
   "Blend" : 0.5,
   "Character Encoding" : 4,
@@ -1459,19 +1465,13 @@
     "Alpha Component" : 1,
     "Green Component" : 0
   },
+  "Non-ASCII Anti Aliased" : true,
   "Ansi 12 Color (Light)" : {
     "Red Component" : 0.11372549019607843,
     "Color Space" : "P3",
     "Blue Component" : 0.95294117647058818,
     "Alpha Component" : 1,
     "Green Component" : 0.59999999999999998
-  },
-  "Ansi 0 Color" : {
-    "Red Component" : 0.078431375324726105,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.11764705926179886,
-    "Alpha Component" : 1,
-    "Green Component" : 0.098039217293262454
   },
   "Foreground Color (Dark)" : {
     "Red Component" : 1,

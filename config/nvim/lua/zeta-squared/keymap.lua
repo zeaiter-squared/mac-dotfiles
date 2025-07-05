@@ -23,10 +23,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-o>', 'o<Esc>')
 vim.keymap.set('n', '<A-o>', 'O<Esc>')
 
--- Keymap to have <C-[> behave in terminal mode as it does in insert
--- mode.
-vim.keymap.set('t', '<A-[>', '<C-\\><C-n>')
-
 -- Keymap to jump to previous file.
 vim.keymap.set('n', '<C-q>', '<C-^>')
 

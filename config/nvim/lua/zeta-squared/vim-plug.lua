@@ -22,7 +22,6 @@ Plug('catppuccin/nvim')
 
 -- UI/UX - ui.lua
 Plug('ibhagwan/fzf-lua', {['branch'] = 'main'})
-Plug('numToStr/FTerm.nvim')
 Plug('lervag/vimtex')
 Plug('nvim-lualine/lualine.nvim')
 Plug('akinsho/bufferline.nvim')

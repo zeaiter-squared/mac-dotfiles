@@ -151,7 +151,6 @@ alias invim="cd ${HOME}/.config/nvim && vim"
 alias python=python3.12
 alias pip="python -m pip"
 alias sd='cd ~ && cd "$(fzf --walker=dir,follow,hidden --reverse --height 40%)"'
-alias lg=lazygit
 
 export FZF_DEFAULT_COMMAND='fd -t d'
 export FZF_DEFAULT_OPTS="--walker-skip .git,node_modules,venv"
