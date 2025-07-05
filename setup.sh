@@ -12,6 +12,7 @@ packages=(
     azure-cli
     lazygit
     python@3.12
+    tmux
     iterm2
 )
 
@@ -46,7 +47,9 @@ rm -f ${HOME}/Downloads/Docker.dmg
 echo "Successfully installed docker."
 
 echo "Installing dotfiles..."
+ln -sf ${DOTFILES_DIR}/.profile ${HOME}
 ln -sf ${DOTFILES_DIR}/.bashrc ${HOME}
+ln -sf ${DOTFILES_DIR}/.tmux.conf ${HOME}
 ln -sf ${DOTFILES_DIR}/.gitconfig ${HOME}
 source ${HOME}/.bashrc
 ln -sf ${DOTFILES_DIR}/config/* ${HOME}/.config/
