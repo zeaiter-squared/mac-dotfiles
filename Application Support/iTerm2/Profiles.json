@@ -76,7 +76,7 @@
     "Green Component" : 0.62745098039215685
   },
   "HotKey Characters" : "",
-  "Only The Default BG Color Uses Transparency" : false,
+  "Only The Default BG Color Uses Transparency" : true,
   "Scrollback Lines" : 1000,
   "Badge Color (Dark)" : {
     "Red Component" : 0.92929404973983765,
@@ -92,7 +92,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.45490196078431372
   },
-  "Transparency" : 0.3000000000000001,
+  "Transparency" : 0.29857700892857142,
   "Bound Hosts" : [
 
   ],
@@ -105,7 +105,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.33333333333333331
   },
-  "Blur" : true,
+  "Blur" : false,
   "Ansi 13 Color" : {
     "Red Component" : 0.8821563720703125,
     "Color Space" : "sRGB",
@@ -378,7 +378,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.52941176470588236
   },
-  "Normal Font" : "SauceCodeProNF-MediumItalic 16",
+  "Normal Font" : "SauceCodeProNF-SemiBoldItalic 16.5",
   "Use Selected Text Color (Dark)" : false,
   "Has Hotkey" : true,
   "Foreground Color" : {
@@ -395,7 +395,7 @@
     "Alpha Component" : 1,
     "Green Component" : 1
   },
-  "Command" : "\/bin\/bash -ilc \"tmux new-session -A -s dev\"",
+  "Command" : "\/bin\/bash",
   "Minimum Contrast (Light)" : 0,
   "Blend" : 0.5,
   "Character Encoding" : 4,
@@ -436,6 +436,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.47450980392156861
   },
+  "Thin Strokes" : 3,
   "Badge Color" : {
     "Red Component" : 0.74613857269287109,
     "Color Space" : "sRGB",
@@ -818,7 +819,7 @@
     "Green Component" : 0.62745098039215685
   },
   "HotKey Characters" : "",
-  "Only The Default BG Color Uses Transparency" : false,
+  "Only The Default BG Color Uses Transparency" : true,
   "Scrollback Lines" : 1000,
   "Badge Color (Dark)" : {
     "Red Component" : 0.92929404973983765,
@@ -834,7 +835,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.45490196078431372
   },
-  "Transparency" : 0.3000000000000001,
+  "Transparency" : 0.29813058035714285,
   "Bound Hosts" : [
 
   ],
@@ -847,7 +848,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.33333333333333331
   },
-  "Blur" : true,
+  "Blur" : false,
   "Ansi 13 Color" : {
     "Red Component" : 0.8821563720703125,
     "Color Space" : "sRGB",
@@ -1117,7 +1118,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.52941176470588236
   },
-  "Normal Font" : "SauceCodeProNF-Italic 17.5",
+  "Normal Font" : "SauceCodeProNF-SemiBoldItalic 18",
   "Use Selected Text Color (Dark)" : false,
   "Has Hotkey" : false,
   "Foreground Color" : {
@@ -1134,7 +1135,7 @@
     "Alpha Component" : 1,
     "Green Component" : 1
   },
-  "Command" : "\/bin\/bash -ilc \"tmux new-session -A -s dev\"",
+  "Command" : "\/bin\/bash",
   "Minimum Contrast (Light)" : 0,
   "Blend" : 0.5,
   "Character Encoding" : 4,
@@ -1175,6 +1176,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.47450980392156861
   },
+  "Thin Strokes" : 3,
   "Badge Color" : {
     "Red Component" : 0.74613857269287109,
     "Color Space" : "sRGB",
@@ -1416,6 +1418,7 @@
     "Green Component" : 0.26474356651306152
   },
   "Use Separate Colors for Light and Dark Mode" : true,
+  "Draw Powerline Glyphs" : false,
   "Ansi 3 Color" : {
     "Red Component" : 0.78058648109436035,
     "Color Space" : "sRGB",
