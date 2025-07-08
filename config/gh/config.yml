@@ -7,7 +7,7 @@ prompt: enabled
 # A pager program to send command output to, e.g. "less". Set the value to "cat" to disable the pager.
 pager:
 # Aliases allow you to create nicknames for gh commands
-aliases: {list-collab: api repos/$1/$2/collaborators, remove-collab: api -X DELETE repos/$1/$2/collaborators/$3, repo-content: api repos/$1/$2/contents/$3, list-inv: api repos/$1/$2/invitations, delete-inv: api -X DELETE repos/$1/$2/invitations/$3, add-collab: api -X PUT repos/$1/$2/collaborators/$3 -f permission=$4}
+aliases: {list-collab: api repos/$1/$2/collaborators, remove-collab: api -X DELETE repos/$1/$2/collaborators/$3, repo-content: api repos/$1/$2/contents/$3, list-inv: api repos/$1/$2/invitations, delete-inv: api -X DELETE repos/$1/$2/invitations/$3, add-collab: api -X PUT repos/$1/$2/collaborators/$3 -f permission=$4, my-inv: api user/repository_invitations, accept-inv: api -X PATCH user/repository_invitations/$1, decline-inv: api -X DELETE user/repository_invitations/$1}
 # The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
 http_unix_socket:
 # What web browser gh should use when opening URLs. If blank, will refer to environment.
