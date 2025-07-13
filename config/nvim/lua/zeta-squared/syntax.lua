@@ -10,11 +10,23 @@ require('nvim-treesitter.configs').setup {
 	indent = {
 		enable = true,
 	},
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ar"] = "@return.outer",
+                ["ir"] = "@return.inner",
+                ["ab"] = "@block.outer",
+                ["ib"] = "@block.inner",
+                ["ac"] = "@call.outer",
+                ["ic"] = "@call.inner",
+            }
+        }
+    }
 }
-
--- Prettier Config
--- vim.g['prettier#autoformat'] = 1
--- vim.g['prettier#autoformat_require_pragma'] = 0
 
 -- Mini Config
 local mini = require('mini.icons')

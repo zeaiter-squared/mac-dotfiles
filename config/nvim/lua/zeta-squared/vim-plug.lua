@@ -12,11 +12,13 @@ Plug('folke/lazydev.nvim', { ['for'] = 'lua' })
 -- Completion - blink.lua/cmp.lua
 Plug('saghen/blink.cmp', { ['tag'] = 'v1.*' })
 Plug('L3MON4D3/LuaSnip', { ['do'] = 'make install_jsregexp' })
+Plug('kylechui/nvim-surround')
 Plug('altermo/ultimate-autopair.nvim')
 Plug('windwp/nvim-ts-autotag')
 
 -- Syntax, formatting, and icons - syntax.lua
-Plug('nvim-treesitter/nvim-treesitter')
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+Plug('nvim-treesitter/nvim-treesitter-textobjects')
 Plug('echasnovski/mini.icons')
 Plug('catppuccin/nvim')
 

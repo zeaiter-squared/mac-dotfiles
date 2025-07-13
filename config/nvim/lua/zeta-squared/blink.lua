@@ -7,6 +7,9 @@ vim.keymap.set({'i', 's'}, '<C-j>', function() ls.jump(-1) end, { silent = true 
 
 require('luasnip.loaders.from_snipmate').lazy_load()
 
+-- Surround support
+require('nvim-surround').setup({})
+
 -- Auto completion for html tags
 require('nvim-ts-autotag').setup({})
 

@@ -5,6 +5,9 @@ vim.g.UltiSnipsExpandTrigger = '<Tab>'
 vim.g.UltiSnipsJumpForwardTrigger = '<Tab>'
 vim.g.UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
+-- Surround support
+require('nvim-surround').setup({})
+
 -- Auto completion for html tags
 require('nvim-ts-autotag').setup({})
 
