@@ -18,11 +18,6 @@ vim.keymap.set('i', '<C-e>', '<End>')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
--- Keymaps for adding newlines below or above current line without
--- leaving normal mode.
-vim.keymap.set('n', '<C-o>', 'o<Esc>')
-vim.keymap.set('n', '<A-o>', 'O<Esc>')
-
 -- Keymap to jump to previous file.
 vim.keymap.set('n', '<C-q>', '<C-^>')
 
@@ -40,9 +35,3 @@ vim.keymap.set('n', '<leader>9', '9gt')
 -- Keymap to grab and change all words in the file that are currently
 -- under the cursor.
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- Keymaps to open floating window for diagnostics that go off screen.
--- Also mappings to jump to next or prev diagnostic in file.
-vim.keymap.set('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>')
-vim.keymap.set('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-vim.keymap.set('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
