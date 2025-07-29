@@ -1,33 +1,3 @@
--- This function gets run when an LSP attaches to a particular buffer.
--- That is to say, every time a new file is opened that is associated with
--- an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
--- function will be executed to configure the current buffer.
-vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
-    callback = function(event)
-        -- We create a function that lets us more easily define mappings specific
-        -- for LSP related items. It sets the mode, buffer and description for us
-        -- each time.
-        local map = function(keys, func, desc, mode)
-            mode = mode or 'n'
-            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-        end
-        local fzflua = require('fzf-lua')
-
-        -- Jump to the definition of the word under your cursor.
-        --  This is where a variable or function was first defined, etc.
-        --  To jump back, press <C-T>.
-        map('grd', fzflua.lsp_definitions, '[G]oto [D]efitinion')
-
-        -- This is not goto definition.
-        --  For example, in C this would take you to the header.
-        map('grD', fzflua.lsp_declarations, '[G]oto [D]eclaration')
-
-        -- Find references for the word under your cursor.
-        map('grr', fzflua.lsp_references, '[G]oto [R]eferences')
-    end
-})
-
 -- Lazydev lua_ls configuration
 require('lazydev').setup({
     library = {
@@ -134,3 +104,9 @@ vim.diagnostic.config({
     } or {},
     virtual_text = true,
 })
+
+-- LSP custom pickers
+local fzflua = require('fzf-lua')
+vim.keymap.set('n', 'grd', fzflua.lsp_definitions, { desc = 'LSP: [G]oto [D]efinition' })
+vim.keymap.set('n', 'grD', fzflua.lsp_declarations, { desc = 'LSP: [G]oto [D]eclaration' })
+vim.keymap.set('n', 'grr', fzflua.lsp_references, { desc = 'LSP: [G]oto [R]eferences' })
