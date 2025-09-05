@@ -1,11 +1,6 @@
-local languages = {
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-}
 local dap = require('dap')
 local dapui = require('dapui')
+local js_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
 
 dapui.setup()
 require('nvim-dap-virtual-text').setup()
@@ -14,20 +9,20 @@ require('dap-python').setup(os.getenv("HOME") .. '/.local/share/nvim/mason/packa
 dap.adapters["pwa-node"] = {
     type = "server",
     host = "localhost",
-    port = 8123,
+    port = 9230,
     executable = {
-        command = os.getenv("HOME") .. "/.local/share/nvim/mason/bin/js-debug-adapter",
+        command = "node",
+        args = {
+            js_debug_path, "9230"
+        },
     },
 }
 
-dap.adapters["firefox"] = {
-    type = "executable",
-    command = os.getenv("HOME") .. "/.local/share/nvim/mason/bin/firefox-debug-adapter",
-}
-
-dap.adapters["chrome"] = {
-    type = "executable",
-    command = os.getenv("HOME") .. "/.local/share/nvim/mason/bin/chrome-debug-adapter",
+local languages = {
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
 }
 
 for _, language in ipairs(languages) do
@@ -41,29 +36,27 @@ for _, language in ipairs(languages) do
             runtimeExecutable = "node",
         },
         {
-            name = "Next.js: debug server-side",
+            name = "Attach to process",
             type = "pwa-node",
-            request = "launch",
+            request = "attach",
+            port = 9230,
+            restart = true,
             cwd = "${workspaceFolder}",
-            runtimeExecutable = "npm",
-            runtimeArgs = { "run", "dev" },
             sourceMaps = true,
+            protocol = "inspector",
+            skipFiles = {"<node_internals>/**", "node_modules/**"},
         },
         {
-            name = "Next.js: debug full stack",
+            name = "Next.js: debug server",
             type = "pwa-node",
             request = "launch",
+            runtimeExecutable = "node",
             program = "${workspaceFolder}/node_modules/next/dist/bin/next",
-            runtimeArgs = { "--inspect" },
-            skipFiles = { "<node_internals>/**" },
-            serverReadyAction = {
-                action = "debugWithChrome",
-                killOnServerStop = true,
-                pattern = "- Local:.+(https?://.+)",
-                uriFormat = "%s",
-                webRoot = "${workspaceFolder}",
-            },
+            args = {"dev"},
             cwd = "${workspaceFolder}",
+            sourceMaps = true,
+            protocol = "inspector",
+            console = "integratedTerminal"
         },
     }
 end
@@ -88,3 +81,5 @@ vim.keymap.set('n', '<leader>dj', dap.step_over)
 vim.keymap.set('n', '<leader>dh', dap.step_out)
 vim.keymap.set('n', '<leader>dk', dap.step_back)
 vim.keymap.set('n', '<leader>dr', dap.restart)
+vim.keymap.set('n', '<leader>dq', dap.close)
+vim.keymap.set('n', '<leader>dt', dapui.toggle)

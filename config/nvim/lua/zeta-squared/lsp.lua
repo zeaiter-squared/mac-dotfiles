@@ -63,7 +63,6 @@ require('mason-tool-installer').setup({
     ensure_installed  = vim.list_extend(vim.tbl_keys(servers or {}), {
         'debugpy',
         'js-debug-adapter',
-        'chrome-debug-adapter',
     })
 })
 
