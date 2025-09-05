@@ -1,3 +1,6 @@
 [user]
 	email = zeaiter.zeaiter@zurich.com
 	name = Zeaiter Zeaiter
+[core]
+	ignorecase = false
+	editor = nvim
