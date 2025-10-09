@@ -20,7 +20,7 @@ Plug('windwp/nvim-ts-autotag')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('nvim-treesitter/nvim-treesitter-textobjects')
 Plug('echasnovski/mini.icons')
-Plug('catppuccin/nvim')
+Plug('catppuccin/nvim', { ['tag'] = 'v1.10.0' })
 
 -- UI/UX - ui.lua
 Plug('ibhagwan/fzf-lua', {['branch'] = 'main'})
