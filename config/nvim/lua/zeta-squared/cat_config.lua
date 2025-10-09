@@ -117,6 +117,11 @@ local cat_config = {
                 ['@punctuation.special.typescript'] = { fg = c.yellow },
                 ['@punctuation.special.jsx'] = { fg = c.yellow },
                 ['@punctuation.special.tsx'] = { fg = c.yellow },
+                ['DapBreakpoint'] = { fg = c.red },
+                ['DapBreakpointCondition'] = { fg = c.red },
+                ['DapLogPoint'] = { fg = c.peach },
+                ['DapStopped'] = { fg = c.yellow },
+                ['DapBreakpointRejected'] = { fg = c.teal },
             }
         end,
     },
