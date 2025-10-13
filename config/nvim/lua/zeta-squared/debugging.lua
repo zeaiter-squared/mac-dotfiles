@@ -1,10 +1,17 @@
 local dap = require('dap')
 local dapui = require('dapui')
 local js_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
+local go_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/delve/dlv"
+local py_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
 
 dapui.setup()
 require('nvim-dap-virtual-text').setup()
-require('dap-python').setup(os.getenv("HOME") .. '/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+require('dap-python').setup(py_debug_path)
+require('dap-go').setup({
+    delve = {
+        path = go_debug_path,
+    },
+})
 
 dap.adapters["pwa-node"] = {
     type = "server",
