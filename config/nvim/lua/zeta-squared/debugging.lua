@@ -105,8 +105,6 @@ end
 --   dapui.close()
 -- end
 
-local cat_config = require('zeta-squared.cat_config')
-local cat_colours = cat_config.color_overrides.macchiato
 vim.highlight['DapBreakpoint'] = {}
 vim.highlight['DapBreakpointCondition'] = {}
 vim.highlight['DapLogPoint'] = {}
