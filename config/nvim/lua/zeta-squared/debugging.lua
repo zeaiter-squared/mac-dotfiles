@@ -24,6 +24,18 @@ dap.adapters["pwa-node"] = {
     },
 }
 
+dap.adapters["pwa-chrome"] = {
+    type = "executable",
+    command = "node",
+    port = "${port}",
+    executable = {
+        command = "node",
+        args = {
+            js_debug_path, "${port}"
+        },
+    },
+}
+
 local languages = {
     "javascript",
     "typescript",
@@ -77,16 +89,16 @@ for _, language in ipairs(languages) do
             skipFiles = {"<node_internals>/**", "node_modules/**"},
         },
         {
-            name = "Next.js: debug server",
-            type = "pwa-node",
-            request = "launch",
-            runtimeExecutable = "node",
-            program = "${workspaceFolder}/node_modules/next/dist/bin/next",
-            args = {"dev"},
+            type = "pwa-chrome",
+            request = "attach",
+            name = "Next.js: debug client-side",
             cwd = "${workspaceFolder}",
+            port = 9222,
             sourceMaps = true,
             protocol = "inspector",
-            console = "integratedTerminal"
+            webRoot = "${workspaceFolder}",
+            url = "http://localhost:3000",
+            skipFiles = {"<node_internals>/**", "node_modules/**"},
         },
     }
 end
