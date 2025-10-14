@@ -5,7 +5,6 @@ local go_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/de
 local py_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
 
 dapui.setup()
--- require('nvim-dap-virtual-text').setup()
 require('dap-python').setup(py_debug_path)
 require('dap-go').setup({
     delve = {
