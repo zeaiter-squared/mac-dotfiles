@@ -132,7 +132,6 @@ local cat_config = {
             enabled = true,
             indentscope_color = "",
         },
-        nvimtree = true,
     }
 }
 
