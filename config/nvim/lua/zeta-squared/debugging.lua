@@ -129,10 +129,12 @@ vim.keymap.set('n', '<leader>dB',
     end
 )
 vim.keymap.set('n', '<leader>dc', dap.continue)
-vim.keymap.set('n', '<leader>dl', dap.step_into)
-vim.keymap.set('n', '<leader>dj', dap.step_over)
-vim.keymap.set('n', '<leader>dh', dap.step_out)
-vim.keymap.set('n', '<leader>dk', dap.step_back)
+vim.keymap.set('n', '<leader>dg', dap.run_to_cursor)
 vim.keymap.set('n', '<leader>dr', dap.restart)
 vim.keymap.set('n', '<leader>dq', dap.terminate)
 vim.keymap.set('n', '<leader>dt', dapui.toggle)
+
+vim.keymap.set('n', '<F2>', dap.step_out)
+vim.keymap.set('n', '<F3>', dap.step_over)
+vim.keymap.set('n', '<F4>', dap.step_back)
+vim.keymap.set('n', '<F5>', dap.step_into)
