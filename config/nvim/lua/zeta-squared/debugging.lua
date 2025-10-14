@@ -16,11 +16,11 @@ require('dap-go').setup({
 dap.adapters["pwa-node"] = {
     type = "server",
     host = "localhost",
-    port = 9230,
+    port = "${port}",
     executable = {
         command = "node",
         args = {
-            js_debug_path, "9230"
+            js_debug_path, "${port}"
         },
     },
 }
@@ -43,9 +43,9 @@ for _, language in ipairs(languages) do
             runtimeExecutable = "node",
         },
         {
+            name = "Debug payload ingestion",
             type = "pwa-node",
             request = "launch",
-            name = "Debug payload ingestion",
             cwd = "${workspaceFolder}",
             runtimeExecutable = "pnpm",
             runtimeArgs = {"payload", "run", "src/payload/scripts/ingestion", "--", "--refresh"},
@@ -55,14 +55,26 @@ for _, language in ipairs(languages) do
             skipFiles = {"<node_internals>/**", "node_modules/**"},
         },
         {
-            name = "Attach to process",
+            name = "Next.js: debug server-side",
+            type = "pwa-node",
+            request = "launch",
+            cwd = "${workspaceFolder}",
+            runtimeExecutable = "pnpm",
+            runtimeArgs = {"dev"},
+            console = "integratedTerminal",
+            protocol = "inspector",
+            sourceMaps = true,
+            skipFiles = {"<node_internals>/**", "node_modules/**"},
+        },
+        {
+            name = "Next.js: attach to process",
             type = "pwa-node",
             request = "attach",
+            cwd = "${workspaceFolder}",
+            processId = nil,
             port = 9230,
             restart = true,
-            cwd = "${workspaceFolder}",
             sourceMaps = true,
-            protocol = "inspector",
             skipFiles = {"<node_internals>/**", "node_modules/**"},
         },
         {
