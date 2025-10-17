@@ -30,6 +30,7 @@ Plug('akinsho/bufferline.nvim')
 Plug('haya14busa/is.vim')
 Plug('stevearc/oil.nvim')
 Plug('folke/todo-comments.nvim')
+Plug('tpope/vim-fugitive')
 
 -- Debugging - debugging.lua
 Plug('mfussenegger/nvim-dap')

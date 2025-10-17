@@ -189,3 +189,6 @@ require('todo-comments').setup({
 
 local todo_fzf = require('todo-comments.fzf')
 vim.keymap.set('n', '<leader>pc', function() todo_fzf.todo({ prompt = '>' }) end)
+
+-- vim-fugitive Config
+vim.keymap.set('n', '<leader>gb', ':Git blame<CR>')
