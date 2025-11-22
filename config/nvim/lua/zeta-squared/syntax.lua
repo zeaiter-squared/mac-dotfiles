@@ -56,3 +56,9 @@ mini.setup({
 local cat_config = require('zeta-squared.cat_config')
 require('catppuccin').setup(cat_config)
 vim.cmd.colorscheme('catppuccin-macchiato')
+
+-- Folding
+vim.wo.foldlevel = 3
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.wo.foldtext = ''
