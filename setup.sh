@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTFILES_DIR=$(dirname "$(realpath $0)")
-HOMEBREW_PREFIX=/opt/homebrew/
+HOMEBREW_PREFIX=/opt/homebrew/bin/
 packages=(
     neovim
     ripgrep
@@ -72,5 +72,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 echo "Successfully installed vim-plug."
 
 echo "Running plugin installation in neovim..."
-${HOMEBREW_PREFIX}/bin/nvim -c PlugInstall -c q -c q
+${HOMEBREW_PREFIX}/nvim -c PlugInstall -c q -c q
 echo "Successfully installed neovim plugins."
