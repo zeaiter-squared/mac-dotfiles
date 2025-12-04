@@ -30,9 +30,7 @@ echo "Successfully installed all homebrew packages."
 echo "Installing node with pnpm..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 \. "$HOME/.nvm/nvm.sh"
-nvm install 22
-node -v # Should print "v22.15.0".
-nvm current # Should print "v22.15.0".
+nvm install 24
 corepack enable pnpm
 pnpm -v
 echo "Successfully installed node with pnpm."
