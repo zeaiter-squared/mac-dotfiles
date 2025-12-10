@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# You will also need to manually install Docker (configure it to start on login),
+# Postman, and Notion.
+
 DOTFILES_DIR=$(dirname "$(realpath $0)")
 HOMEBREW_PREFIX=/opt/homebrew/bin/
 packages=(
@@ -9,11 +12,13 @@ packages=(
     fzf
     git
     gh
+    go
     azure-cli
     lazygit
     python@3.12
     tmux
     iterm2
+    scroll-reverser # Configure this to only work on mice, not trackpads
 )
 
 echo "Installing homebrew..."
@@ -35,14 +40,18 @@ corepack enable pnpm
 pnpm -v
 echo "Successfully installed node with pnpm."
 
-echo "Installing docker..."
-curl -o ${HOME}/Downloads/Docker.dmg https://desktop.docker.com/mac/main/arm64/190950/Docker.dmg
-echo "Please authenticate with root user for the following installation when prompted..."
-hdiutil attach Docker.dmg
-/Volumes/Docker/Docker.app/Contents/MacOS/install --accept-license --user=ZEAITER.ZEAITER
-hdiutil detach /Volumes/Docker
-rm -f ${HOME}/Downloads/Docker.dmg
-echo "Successfully installed docker."
+# echo "Installing docker..."
+# curl -o ${HOME}/Downloads/Docker.dmg https://desktop.docker.com/mac/main/arm64/190950/Docker.dmg
+# echo "Please authenticate with root user for the following installation when prompted..."
+# hdiutil attach Docker.dmg
+# /Volumes/Docker/Docker.app/Contents/MacOS/install --accept-license --user=ZEAITER.ZEAITER
+# hdiutil detach /Volumes/Docker
+# rm -f ${HOME}/Downloads/Docker.dmg
+# echo "Successfully installed docker."
+
+echo "Installing tree-sitter-cli..."
+npm i -g tree-sitter-cli
+echo "Successfully installed tree-sitter-cli"
 
 echo "Installing dotfiles..."
 ln -sf ${DOTFILES_DIR}/.profile ${HOME}
