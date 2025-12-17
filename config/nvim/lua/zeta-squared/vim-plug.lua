@@ -17,7 +17,7 @@ Plug('altermo/ultimate-autopair.nvim')
 Plug('windwp/nvim-ts-autotag')
 
 -- Syntax, formatting, and icons - syntax.lua
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
+Plug('nvim-treesitter/nvim-treesitter', { ['branch'] = 'master', ['do'] = ':TSUpdate' })
 Plug('nvim-treesitter/nvim-treesitter-textobjects')
 Plug('echasnovski/mini.icons')
 Plug('catppuccin/nvim', { ['tag'] = 'v1.10.0' })
