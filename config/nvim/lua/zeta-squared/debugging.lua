@@ -1,10 +1,17 @@
 local dap = require('dap')
-local dapui = require('dapui')
+local dapview = require('dap-view')
 local js_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
 local go_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/delve/dlv"
 local py_debug_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
 
-dapui.setup()
+dapview.setup({
+    winbar = {
+        show = true,
+        controls = {
+            enabled = true,
+        },
+    },
+})
 require('dap-python').setup(py_debug_path)
 require('dap-go').setup({
     delve = {
@@ -103,19 +110,6 @@ for _, language in ipairs(languages) do
     }
 end
 
--- dap.listeners.before.attach.dapui_config = function()
---   dapui.open()
--- end
--- dap.listeners.before.launch.dapui_config = function()
---   dapui.open()
--- end
--- dap.listeners.before.event_terminated.dapui_config = function()
---   dapui.close()
--- end
--- dap.listeners.before.event_exited.dapui_config = function()
---   dapui.close()
--- end
-
 vim.highlight['DapBreakpoint'] = {}
 vim.highlight['DapBreakpointCondition'] = {}
 vim.highlight['DapLogPoint'] = {}
@@ -143,7 +137,7 @@ vim.keymap.set('n', '<leader>dc', dap.continue)
 vim.keymap.set('n', '<leader>dg', dap.run_to_cursor)
 vim.keymap.set('n', '<leader>dr', dap.restart)
 vim.keymap.set('n', '<leader>dq', dap.terminate)
-vim.keymap.set('n', '<leader>dt', dapui.toggle)
+vim.keymap.set('n', '<leader>dt', dapview.toggle)
 
 vim.keymap.set('n', '<F2>', dap.step_out)
 vim.keymap.set('n', '<F3>', dap.step_over)
