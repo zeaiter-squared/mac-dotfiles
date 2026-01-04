@@ -6,8 +6,12 @@ require('lazydev').setup({
 })
 
 local servers = {
-    ['python-lsp-server'] = {
-        lsp = 'pylsp',
+    ['basedpyright'] = {
+        lsp = 'basedpyright',
+        config = {},
+    },
+    ['ruff'] = {
+        lsp = 'ruff',
         config = {},
     },
     ['lua-language-server'] = {
@@ -80,11 +84,27 @@ for _, settings in pairs(servers) do
                     command = 'LspEslintFixAll',
                 })
             end,
-            settings = {
-                workingDirectory = { mode = 'auto' },
-            },
+            settings = settings.config.settings,
         })
         vim.lsp.enable('eslint')
+    elseif settings.lsp == 'ruff' then
+        vim.lsp.config('ruff', {
+            on_attach = function(_, bufnr)
+                vim.api.nvim_create_autocmd('BufWritePre', {
+                    buffer = bufnr,
+                    callback = function()
+                        vim.lsp.buf.format()
+                    end,
+                })
+
+                vim.api.nvim_create_autocmd('BufWritePost', {
+                    buffer = bufnr,
+                    command = 'silent! !~/.local/share/nvim/mason/packages/ruff/venv/bin/ruff check --select I --fix %',
+                })
+            end,
+            settings = settings.config.settings,
+        })
+        vim.lsp.enable('ruff')
     else
         vim.lsp.config(settings.lsp, settings.config)
         vim.lsp.enable(settings.lsp)
