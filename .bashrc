@@ -141,7 +141,6 @@ ex ()
 
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/Applications/Docker.app/Contents/Resources/bin:$PATH
-export PATH=/usr/local/bin:$PATH
 
 eval "$(fzf --bash)"
 
@@ -154,6 +153,7 @@ alias sd='cd ~ && cd "$(fzf --walker=dir,follow,hidden --reverse --height 40%)"'
 
 export FZF_DEFAULT_COMMAND='fd -t d'
 export FZF_DEFAULT_OPTS="--walker-skip .git,node_modules,venv"
+export EDITOR=vim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
