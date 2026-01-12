@@ -11,6 +11,13 @@ dapview.setup({
             enabled = true,
         },
     },
+    windows = {
+        position = "right",
+        height = 0.7,
+        terminal = {
+            position = "below",
+        }
+    }
 })
 require('dap-python').setup(py_debug_path)
 require('dap-go').setup({
@@ -137,7 +144,7 @@ vim.keymap.set('n', '<leader>dc', dap.continue)
 vim.keymap.set('n', '<leader>dg', dap.run_to_cursor)
 vim.keymap.set('n', '<leader>dr', dap.restart)
 vim.keymap.set('n', '<leader>dq', dap.terminate)
-vim.keymap.set('n', '<leader>dt', dapview.toggle)
+vim.keymap.set('n', '<leader>dt', function() dapview.toggle(true) end)
 
 vim.keymap.set('n', '<F2>', dap.step_out)
 vim.keymap.set('n', '<F3>', dap.step_over)
