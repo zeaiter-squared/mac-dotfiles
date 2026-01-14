@@ -13,7 +13,7 @@ dapview.setup({
     },
     windows = {
         position = "right",
-        height = 0.7,
+        size = 0.7,
         terminal = {
             position = "below",
         }
