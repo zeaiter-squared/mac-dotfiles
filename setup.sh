@@ -59,11 +59,16 @@ ln -sf ${DOTFILES_DIR}/.bashrc ${HOME}
 ln -sf ${DOTFILES_DIR}/.tmux.conf ${HOME}
 ln -sf ${DOTFILES_DIR}/.gitconfig ${HOME}
 source ${HOME}/.bashrc
+mkdir -p ${HOME}/.config/
+mkdir -p ${HOME}/.local/share/
+mkdir -p ${HOME}/Library/Application Support/iTerm2/DynamicProfiles/
+mkdir -p ${HOME}/Library/LaunchAgents/
 ln -sf ${DOTFILES_DIR}/config/* ${HOME}/.config/
 ln -sf ${DOTFILES_DIR}/local/* ${HOME}/.local/share/
 rm -rf ${HOME}/Library/Application Support/lazygit
 ln -sf ${DOTFILES_DIR}/Application\ Support/lazygit ${HOME}/Library/Application\ Support/
 ln -sf ${DOTFILES_DIR}/Application\ Support/iTerm2/Profiles.json ${HOME}/Library/Application\ Support/iTerm2/DynamicProfiles/
+ln -sf ${DOTFILES_DIR}/scripts/com.user.set_capslock.plist ${HOME}/Library/LaunchAgents/
 echo "Successfully installed dotfiles."
 
 echo "Installing fonts..."
