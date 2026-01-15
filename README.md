@@ -1,5 +1,5 @@
 For the most part everything is handled by the `setup.sh` script. There are several items that need to be
-addressed manually.
+addressed manually. Make sure to run through these steps with all VPNs disabled.
 
 1. Clone this repo (a popup will appear to automatically install `git`).
 2. Run `setup.sh`.
