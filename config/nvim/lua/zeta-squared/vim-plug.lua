@@ -35,7 +35,6 @@ Plug('tpope/vim-fugitive')
 -- Debugging - debugging.lua
 Plug('mfussenegger/nvim-dap')
 Plug('nvim-neotest/nvim-nio')
--- Plug('rcarriga/nvim-dap-ui')
 Plug('igorlfs/nvim-dap-view')
 Plug('leoluz/nvim-dap-go')
 Plug('mfussenegger/nvim-dap-python')
