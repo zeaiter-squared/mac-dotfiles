@@ -164,7 +164,14 @@ require('bufferline').setup({
 -- Oil Config
 local oil = require('oil')
 oil.setup()
-vim.keymap.set("n", "<leader>pd", oil.toggle_float)
+vim.keymap.set("n", "<leader>pd", function ()
+    oil.toggle_float(nil, {
+        preview = {
+            horizontal = true,
+        },
+    })
+end
+)
 
 -- Todo Config
 require('todo-comments').setup({
