@@ -6,7 +6,7 @@
         <string>com.user.set_capslock</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/Users/ZEAITER.ZEAITER/scripts/set_capslock.sh</string>
+            <string>/Users/ZEAITER.ZEAITER/dotfiles/scripts/set_capslock.sh</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
