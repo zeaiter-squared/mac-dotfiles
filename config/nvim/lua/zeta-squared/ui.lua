@@ -166,9 +166,9 @@ local oil = require('oil')
 oil.setup()
 vim.keymap.set("n", "<leader>pd", function ()
     oil.toggle_float(nil, {
-        preview = {
-            horizontal = true,
-        },
+        -- preview = {
+        --     horizontal = true,
+        -- },
     })
 end
 )
