@@ -13,8 +13,9 @@ dapview.setup({
     },
     windows = {
         position = "right",
-        size = 0.7,
+        size = 0.5,
         terminal = {
+            size = 0.35,
             position = "below",
         }
     }
@@ -73,7 +74,7 @@ for _, language in ipairs(languages) do
             request = "launch",
             cwd = "${workspaceFolder}",
             runtimeExecutable = "pnpm",
-            runtimeArgs = {"payload", "run", "src/payload/scripts/ingestion", "--", "--refresh"},
+            runtimeArgs = {"payload", "run", "src/payload/scripts/ingestion", "openai"},
             console = "integratedTerminal",
             internalConsoleOptions = "neverOpen",
             sourceMaps = true,
