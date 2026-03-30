@@ -141,6 +141,7 @@ ex ()
 
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=/Applications/Docker.app/Contents/Resources/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 eval "$(fzf --bash)"
 
