@@ -49,7 +49,13 @@ local servers = {
     },
     ['gopls'] = {
         lsp = 'gopls',
-        config = {},
+        config = {
+            settings = {
+                gopls = {
+                    completeFunctionCalls = false,
+                },
+            },
+        },
     },
     ['eslint-lsp'] = {
         lsp = 'eslint',
