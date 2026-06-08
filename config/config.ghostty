@@ -1,0 +1,39 @@
+command = bash
+
+macos-option-as-alt = true
+
+quick-terminal-position = top
+quick-terminal-size = 100%,100%
+quick-terminal-autohide = false
+keybind = global:F12=toggle_quick_terminal
+
+palette = 0=#f7744f
+palette = 1=#fa4f64
+palette = 2=#fe9797
+palette = 3=#fdb93a
+palette = 4=#4bcdf8
+palette = 5=#7287fb
+palette = 6=#94e93e
+palette = 7=#cc79f3
+palette = 8=#f7744f
+palette = 9=#fa4f64
+palette = 10=#fe9797
+palette = 11=#fdb93a
+palette = 12=#4bcdf8
+palette = 13=#7287fb
+palette = 14=#94e93e
+palette = 15=#cc79f3
+background = #232627
+foreground = #ffffff
+cursor-color = #ffffff
+selection-background = #95a0a0
+selection-foreground = #96a1a1
+
+background-opacity = 0.8
+
+font-family = SauceCodePro NF Medium
+font-style = italic
+font-style-bold = italic
+font-style-italic = italic
+font-style-bold-italic = italic
+font-size = 17
