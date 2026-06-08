@@ -53,6 +53,10 @@ echo "Installing tree-sitter-cli..."
 npm i -g tree-sitter-cli
 echo "Successfully installed tree-sitter-cli"
 
+echo "Installing fonts..."
+${HOMEBREW_PREFIX}/brew install font-sauce-code-pro-nerd-font
+echo "Successfully installed fonts."
+
 echo "Installing dotfiles..."
 ln -sf ${DOTFILES_DIR}/.profile ${HOME}
 ln -sf ${DOTFILES_DIR}/.bashrc ${HOME}
@@ -70,13 +74,6 @@ ln -sf ${DOTFILES_DIR}/Application\ Support/lazygit ${HOME}/Library/Application\
 ln -sf ${DOTFILES_DIR}/Application\ Support/iTerm2/Profiles.json ${HOME}/Library/Application\ Support/iTerm2/DynamicProfiles/
 ln -sf ${DOTFILES_DIR}/scripts/com.user.set_capslock.plist ${HOME}/Library/LaunchAgents/
 echo "Successfully installed dotfiles."
-
-echo "Installing fonts..."
-FILE='SourceCodePro'
-curl -o ${HOME}/Library/Fonts/${FILE}.tar.xz -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/SourceCodePro.tar.xz
-tar xf ${HOME}/Library/Fonts/${FILE}.tar.xz --exclude=LICENSE.txt --exclude=README.md -C ${HOME}/Library/Fonts/
-rm -f ${HOME}/Library/Fonts/${FILE}*
-echo "Successfully installed fonts."
 
 echo "Installing vim-plug..."
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
