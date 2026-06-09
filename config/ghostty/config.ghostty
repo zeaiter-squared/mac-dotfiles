@@ -2,9 +2,12 @@ command = bash
 
 macos-option-as-alt = true
 
+initial-window = false
+
 quick-terminal-position = top
 quick-terminal-size = 100%,100%
 quick-terminal-autohide = false
+quick-terminal-animation-duration = 0.3
 keybind = global:F12=toggle_quick_terminal
 
 palette = 0=#f7744f
@@ -29,9 +32,9 @@ cursor-color = #ffffff
 selection-background = #95a0a0
 selection-foreground = #96a1a1
 
-background-opacity = 0.8
+background-opacity = 0.7
 
-font-family = SauceCodePro NF Medium
+font-family = SauceCodePro NF Semibold
 font-style = italic
 font-style-bold = italic
 font-style-italic = italic
