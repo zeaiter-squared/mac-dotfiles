@@ -56,3 +56,6 @@ require('codecompanion').setup({
         log_level = "DEBUG",
     },
 })
+
+vim.keymap.set('n', '<leader>cc', ':CodeCompanionChat Toggle adapter=ollama model=qwen2.5-coder-4k:latest<CR>', { noremap = false, silent = true })
+vim.keymap.set({'n', 'v'}, '<leader>ca', ':CodeCompanionActions<CR>', { noremap = true, silent = true })
