@@ -6,7 +6,7 @@
 DOTFILES_DIR=$(dirname "$(realpath $0)")
 HOMEBREW_PREFIX=/opt/homebrew/bin/
 packages=(
-    neovim
+    bob
     ripgrep
     fd
     fzf
@@ -31,6 +31,10 @@ for package in "${packages[@]}"; do
     ${HOMEBREW_PREFIX}/brew install "$package"
 done
 echo "Successfully installed all homebrew packages."
+
+echo "Installing neovim..."
+bob install v0.11.7
+echo "Successfully installed neovim."
 
 echo "Installing node with pnpm..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
