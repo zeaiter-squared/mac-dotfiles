@@ -5,8 +5,7 @@ require('render-markdown').setup({
 require('codecompanion').setup({
     interactions = {
         chat = {
-            adapter = "ollama",
-            model = "codegemma:7b",
+            adapter = "opencode",
             opts = {
                 completion_provider = "blink",
             },
@@ -22,7 +21,7 @@ require('codecompanion').setup({
                 full_height = true, -- for vertical layout
                 position = "right", -- left|right|top|bottom (nil will default depending on vim.opt.splitright|vim.opt.splitbelow)
 
-                width = 0.3, ---@return number|fun(): number
+                width = 0.4, ---@return number|fun(): number
                 height = 1.0, ---@return number|fun(): number
 
                 border = "single",
@@ -57,5 +56,5 @@ require('codecompanion').setup({
     },
 })
 
-vim.keymap.set('n', '<leader>cc', ':CodeCompanionChat Toggle adapter=ollama model=qwen3.5-8k:9b<CR>', { noremap = false, silent = true })
+vim.keymap.set('n', '<leader>cc', ':CodeCompanionChat Toggle adapter=opencode<CR>', { noremap = false, silent = true })
 vim.keymap.set({'n', 'v'}, '<leader>ca', ':CodeCompanionActions<CR>', { noremap = true, silent = true })
