@@ -54,7 +54,7 @@ echo "Successfully installed node with pnpm."
 # echo "Successfully installed docker."
 
 echo "Installing tree-sitter-cli..."
-npm i -g tree-sitter-cli
+npm i -g tree-sitter-cli@0.25.10
 echo "Successfully installed tree-sitter-cli"
 
 echo "Installing fonts..."
