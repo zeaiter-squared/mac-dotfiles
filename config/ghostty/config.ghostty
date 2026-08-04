@@ -36,7 +36,7 @@ selection-foreground = #96a1a1
 background-opacity = 0.7
 keybind = cmd+u=toggle_background_opacity
 
-font-family = SauceCodePro NF Semibold
+font-family = GeistMono NF Medium
 font-style = italic
 font-style-bold = italic
 font-style-italic = italic
