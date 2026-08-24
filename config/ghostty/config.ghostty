@@ -36,9 +36,9 @@ selection-foreground = #96a1a1
 background-opacity = 0.7
 keybind = cmd+u=toggle_background_opacity
 
-font-family = GeistMono NF Medium
+font-family = Hasklug Nerd Font Mono Med
 font-style = italic
 font-style-bold = italic
 font-style-italic = italic
 font-style-bold-italic = italic
-font-size = 18
+font-size = 16
