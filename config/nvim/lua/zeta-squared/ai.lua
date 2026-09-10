@@ -6,6 +6,9 @@ require('codecompanion').setup({
     interactions = {
         chat = {
             adapter = "opencode",
+            roles = {
+                llm = "Vladislav",
+            },
             opts = {
                 completion_provider = "blink",
             },
