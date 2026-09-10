@@ -167,6 +167,10 @@ export NPM_CONFIG_STRICT_SSL=false
 alias zum="docker run --name zum -i -v ${HOME}/Documents/zum/.env:/app/.env:ro -p 3000:3000 -t --rm zum-dev:latest"
 alias zum-psql='docker exec -it zum-psql bash'
 
+# Machine-local secrets (API keys, tokens) live in ~/.bashenv, which is
+# gitignored and never committed. See .bashenv.example for the expected vars.
+[ -f "$HOME/.bashenv" ] && . "$HOME/.bashenv"
+
 if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ]; then
     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
 fi

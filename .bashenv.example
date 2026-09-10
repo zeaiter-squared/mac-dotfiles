@@ -1,0 +1,4 @@
+# Copy this file to ~/.bashenv and fill in real values.
+# ~/.bashenv is gitignored and sourced by .bashrc — never commit real secrets.
+
+export ZURICH_GENAI_API_KEY=

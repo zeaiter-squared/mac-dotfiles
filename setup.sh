@@ -66,6 +66,8 @@ ln -sf ${DOTFILES_DIR}/.profile ${HOME}
 ln -sf ${DOTFILES_DIR}/.bashrc ${HOME}
 ln -sf ${DOTFILES_DIR}/.tmux.conf ${HOME}
 ln -sf ${DOTFILES_DIR}/.gitconfig ${HOME}
+cp -f ${DOTFILES_DIR}/.bashenv.example ${HOME}/.bashenv
+echo "Fill in secrets in ${HOME}/.bashenv before continuing."
 source ${HOME}/.bashrc
 mkdir -p ${HOME}/.config/
 mkdir -p ${HOME}/.local/share/
