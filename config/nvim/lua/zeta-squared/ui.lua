@@ -163,7 +163,12 @@ require('bufferline').setup({
 
 -- Oil Config
 local oil = require('oil')
-oil.setup()
+oil.setup({
+    keymaps = {
+        ["<leader>wv"] = { "actions.select", opts = { vertical = true } },
+        ["<leader>ws"] = { "actions.select", opts = { horizontal = true } },
+    },
+})
 vim.keymap.set("n", "<leader>pd", function ()
     oil.toggle_float(nil, {
         -- preview = {
