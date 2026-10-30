@@ -31,8 +31,8 @@ fzflua.setup({
             ["alt-i"] = actions.toggle_ignore,
             ["alt-h"] = actions.toggle_hidden,
             ["alt-f"] = actions.toggle_follow,
-            ['ctrl-h'] = actions.file_split,
-            ['ctrl-s'] = actions.file_vsplit,
+            ["ctrl-s"] = actions.file_split,
+            ["ctrl-v"] = actions.file_vsplit,
             ['ctrl-t'] = function(...)
                 actions.file_tabedit(...)
                 vim.cmd('$tabmove')
